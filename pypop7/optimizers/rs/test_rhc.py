@@ -12,5 +12,5 @@ def test_optimize():
                'sigma': 3.0}
     rhc = RHC(problem, options)  # initialize the optimizer class
     results = rhc.optimize()  # run the optimization process
-    # return the number of function evaluations and best-so-far fitness
-    print(f"RHC: {results['n_function_evaluations']}, {results['best_so_far_y']}")
+    assert results['n_function_evaluations'] == 5000
+    assert results['best_so_far_y'] < 1.0

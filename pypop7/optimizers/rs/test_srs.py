@@ -12,5 +12,5 @@ def test_optimize():
                'sigma': 3.0}
     srs = SRS(problem, options)  # initialize the optimizer class
     results = srs.optimize()  # run the optimization process
-    # return the number of function evaluations and best-so-far fitness
-    print(f"SRS: {results['n_function_evaluations']}, {results['best_so_far_y']}")
+    assert results['n_function_evaluations'] == 5000
+    assert results['best_so_far_y'] < 1.0

@@ -13,5 +13,5 @@ def test_optimize():
                'temperature': 100}
     csa = CSA(problem, options)  # initialize the optimizer class
     results = csa.optimize()  # run the optimization process
-    # return the number of function evaluations and best-so-far fitness
-    print(f"CSA: {results['n_function_evaluations']}, {results['best_so_far_y']}")
+    assert results['n_function_evaluations'] == 5000
+    assert results['best_so_far_y'] < 1.0
